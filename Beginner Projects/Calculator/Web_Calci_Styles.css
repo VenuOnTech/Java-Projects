@@ -1,0 +1,160 @@
+/* Body & Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: white;
+}
+
+/* Layout container with calculator and sidebar */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 40px;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+/* Calculator wrapper */
+.calculator {
+    background: #2c2c2c;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Display screen */
+#display {
+    width: 94%;
+    font-size: 24px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+/* Button grid layout */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    gap: 10px;
+    justify-content: center;
+}
+
+/* All calculator buttons */
+button {
+    height: 50px;
+    font-size: 18px;
+    background: #555;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #777;
+}
+
+/* Floating History Button */
+#toggleHistoryBtn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #444;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 5px #000;
+    z-index: 999;
+}
+
+/* History Sidebar */
+.history-panel {
+    display: none;
+    background: #1e1e1e;
+    padding: 20px;
+    width: 250px;
+    height: fit-content;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+}
+
+/* History Header (title + clear button) */
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.history-panel h3 {
+    margin: 0;
+}
+
+/* Clear Button */
+.history-panel button {
+    background: #aa2222;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* History List Styles */
+#historyList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#historyList li {
+    padding: 8px;
+    border-bottom: 1px solid #333;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#historyList li:hover {
+    background: #333;
+    color: white;
+}
+
+/* Responsive Layout (for mobile/tablets) */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .history-panel {
+        width: 90%;
+        max-height: 300px;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(4, 60px);
+    }
+
+    #toggleHistoryBtn {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+    }
+}
